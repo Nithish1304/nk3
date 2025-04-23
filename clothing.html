@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CLOTHING | JM SHOPPING</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    <!-- external CSS -->
+    <link rel="stylesheet" href="css/clothing.css">
+    <!-- header links -->
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+
+    <div id="mainContainer">
+        <div id="clothingBanner">
+            <h1>Clothing for Men and Women</h1>
+            <p>Browse our exclusive collection of clothing items designed for modern lifestyle</p>
+        </div>
+
+        <div id="filtersSection">
+            <h3>Filters</h3>
+            <div id="filterOptions">
+                <div class="filterCategory">
+                    <h4>Brand</h4>
+                    <div class="filterCheckboxes" id="brandFilters">
+                        <!-- JS will populate this -->
+                    </div>
+                </div>
+                <div class="filterCategory">
+                    <h4>Price Range</h4>
+                    <div class="filterCheckboxes">
+                        <label><input type="checkbox" name="price" value="0-500"> Rs 0 - Rs 500</label>
+                        <label><input type="checkbox" name="price" value="500-1000"> Rs 500 - Rs 1000</label>
+                        <label><input type="checkbox" name="price" value="1000-1500"> Rs 1000 - Rs 1500</label>
+                        <label><input type="checkbox" name="price" value="1500+"> Rs 1500+</label>
+                    </div>
+                </div>
+                <button id="applyFilters">Apply Filters</button>
+                <button id="clearFilters">Clear All</button>
+            </div>
+        </div>
+
+        <div id="productsContainer">
+            <div id="sortOptions">
+                <label for="sortSelect">Sort By:</label>
+                <select id="sortSelect">
+                    <option value="default">Default</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                    <option value="price-asc">Price (Low to High)</option>
+                    <option value="price-desc">Price (High to Low)</option>
+                </select>
+            </div>
+            <div id="clothingItems">
+                <!-- JS rendered code will go here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="4"></div>
+    <script>
+        load("footer.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>
+
+    <!-- JS file -->
+    <script src="js/clothing.js"></script>
+</body>
+</html>

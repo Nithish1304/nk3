@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>USER DASHBOARD | E-COMMERCE WEBSITE BY EDYODA</title>
+    <!-- favicon -->
+    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    <!-- EXTERNAL LINKS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/jQuery3.4.1.js"></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+
+    <!-- DASHBOARD CONTENT -->
+    <main class="dashboard-container">
+        <div class="dashboard-sidebar">
+            <div class="user-profile">
+                <div class="profile-picture">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h3 class="username">John Doe</h3>
+                <p class="user-email">john.doe@example.com</p>
+            </div>
+            <nav class="dashboard-nav">
+                <ul>
+                    <li class="active" data-tab="overview"><i class="fas fa-home"></i> Overview</li>
+                    <li data-tab="orders"><i class="fas fa-shopping-bag"></i> My Orders</li>
+                    <li data-tab="wishlist"><i class="far fa-heart"></i> Wishlist</li>
+                    <li data-tab="profile"><i class="fas fa-user"></i> My Profile</li>
+                    <li data-tab="addresses"><i class="fas fa-map-marker-alt"></i> Addresses</li>
+                    <li data-tab="settings"><i class="fas fa-cog"></i> Settings</li>
+                </ul>
+            </nav>
+            <div class="logout-btn">
+                <button><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </div>
+        
+        <div class="dashboard-content">
+            <!-- Overview Tab -->
+            <div class="tab-content active" id="overview">
+                <h2>Dashboard Overview</h2>
+                <div class="dashboard-cards">
+                    <div class="card">
+                        <div class="card-icon orders-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Orders</h3>
+                            <p class="card-value">5</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon wishlist-icon">
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Wishlist</h3>
+                            <p class="card-value">12</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Cart Items</h3>
+                            <p class="card-value">3</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recent-orders">
+                    <h3>Recent Orders</h3>
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-5421</td>
+                                <td>Apr 12, 2025</td>
+                                <td>2</td>
+                                <td>$175.99</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-5384</td>
+                                <td>Apr 03, 2025</td>
+                                <td>1</td>
+                                <td>$59.99</td>
+                                <td><span class="status shipped">Shipped</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-5299</td>
+                                <td>Mar 27, 2025</td>
+                                <td>3</td>
+                                <td>$249.50</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="#" class="view-all" data-tab="orders">View All Orders</a>
+                </div>
+            </div>
+            
+            <!-- Orders Tab -->
+            <div class="tab-content" id="orders">
+                <h2>My Orders</h2>
+                <div class="orders-filters">
+                    <input type="text" placeholder="Search orders...">
+                    <select>
+                        <option value="all">All Orders</option>
+                        <option value="delivered">Delivered</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="processing">Processing</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+                <table class="orders-table full-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-5421</td>
+                            <td>Apr 12, 2025</td>
+                            <td>2</td>
+                            <td>$175.99</td>
+                            <td><span class="status delivered">Delivered</span></td>
+                            <td><button class="view-details">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-5384</td>
+                            <td>Apr 03, 2025</td>
+                            <td>1</td>
+                            <td>$59.99</td>
+                            <td><span class="status shipped">Shipped</span></td>
+                            <td><button class="view-details">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-5299</td>
+                            <td>Mar 27, 2025</td>
+                            <td>3</td>
+                            <td>$249.50</td>
+                            <td><span class="status delivered">Delivered</span></td>
+                            <td><button class="view-details">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-5187</td>
+                            <td>Mar 15, 2025</td>
+                            <td>2</td>
+                            <td>$124.75</td>
+                            <td><span class="status delivered">Delivered</span></td>
+                            <td><button class="view-details">Details</button></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-5001</td>
+                            <td>Feb 28, 2025</td>
+                            <td>4</td>
+                            <td>$312.45</td>
+                            <td><span class="status delivered">Delivered</span></td>
+                            <td><button class="view-details">Details</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">Next</a>
+                </div>
+            </div>
+            
+            <!-- Wishlist Tab -->
+            <div class="tab-content" id="wishlist">
+                <h2>My Wishlist</h2>
+                <div class="wishlist-grid">
+                    <div class="wishlist-item">
+                        <div class="item-image">
+                            <img src="/api/placeholder/200/200" alt="Product Image">
+                        </div>
+                        <div class="item-details">
+                            <h3>Premium Leather Jacket</h3>
+                            <p class="item-price">$199.99</p>
+                            <div class="item-actions">
+                                <button class="add-to-cart">Add to Cart</button>
+                                <button class="remove-item"><i class="far fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wishlist-item">
+                        <div class="item-image">
+                            <img src="/api/placeholder/200/200" alt="Product Image">
+                        </div>
+                        <div class="item-details">
+                            <h3>Casual Denim Shirt</h3>
+                            <p class="item-price">$59.99</p>
+                            <div class="item-actions">
+                                <button class="add-to-cart">Add to Cart</button>
+                                <button class="remove-item"><i class="far fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wishlist-item">
+                        <div class="item-image">
+                            <img src="/api/placeholder/200/200" alt="Product Image">
+                        </div>
+                        <div class="item-details">
+                            <h3>Digital Watch</h3>
+                            <p class="item-price">$129.50</p>
+                            <div class="item-actions">
+                                <button class="add-to-cart">Add to Cart</button>
+                                <button class="remove-item"><i class="far fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wishlist-item">
+                        <div class="item-image">
+                            <img src="/api/placeholder/200/200" alt="Product Image">
+                        </div>
+                        <div class="item-details">
+                            <h3>Stylish Sunglasses</h3>
+                            <p class="item-price">$79.99</p>
+                            <div class="item-actions">
+                                <button class="add-to-cart">Add to Cart</button>
+                                <button class="remove-item"><i class="far fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Profile Tab -->
+            <div class="tab-content" id="profile">
+                <h2>My Profile</h2>
+                <div class="profile-info">
+                    <div class="profile-section">
+                        <h3>Personal Information</h3>
+                        <form class="profile-form">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" value="John">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" value="Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" value="john.doe@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="text" id="phone" value="(123) 456-7890">
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">Date of Birth</label>
+                                <input type="date" id="dob" value="1990-01-15">
+                            </div>
+                            <button type="submit" class="save-btn">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Addresses Tab -->
+            <div class="tab-content" id="addresses">
+                <h2>My Addresses</h2>
+                <button class="add-address-btn"><i class="fas fa-plus"></i> Add New Address</button>
+                
+                <div class="addresses-container">
+                    <div class="address-card">
+                        <div class="address-type">Home <span class="default-badge">Default</span></div>
+                        <div class="address-details">
+                            <p>John Doe</p>
+                            <p>123 Main Street, Apt 4B</p>
+                            <p>Los Angeles, CA 90001</p>
+                            <p>United States</p>
+                            <p>Phone: (123) 456-7890</p>
+                        </div>
+                        <div class="address-actions">
+                            <button class="edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="delete-btn"><i class="far fa-trash-alt"></i> Delete</button>
+                        </div>
+                    </div>
+                    
+                    <div class="address-card">
+                        <div class="address-type">Office</div>
+                        <div class="address-details">
+                            <p>John Doe</p>
+                            <p>456 Business Avenue</p>
+                            <p>Suite 700</p>
+                            <p>Los Angeles, CA 90015</p>
+                            <p>United States</p>
+                            <p>Phone: (123) 555-7890</p>
+                        </div>
+                        <div class="address-actions">
+                            <button class="edit-btn"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="delete-btn"><i class="far fa-trash-alt"></i> Delete</button>
+                            <button class="default-btn"><i class="far fa-star"></i> Set as Default</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings">
+                <h2>Account Settings</h2>
+                
+                <div class="settings-section">
+                    <h3>Password</h3>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" id="currentPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" id="newPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm New Password</label>
+                            <input type="password" id="confirmPassword">
+                        </div>
+                        <button type="submit" class="save-btn">Update Password</button>
+                    </form>
+                </div>
+                
+                <div class="settings-section">
+                    <h3>Notifications</h3>
+                    <div class="notification-preferences">
+                        <div class="preference-item">
+                            <div class="preference-info">
+                                <h4>Order Updates</h4>
+                                <p>Receive notifications about your order status</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="preference-item">
+                            <div class="preference-info">
+                                <h4>Promotions & Discounts</h4>
+                                <p>Get notified about sales and special offers</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="preference-item">
+                            <div class="preference-info">
+                                <h4>Product Recommendations</h4>
+                                <p>Receive personalized product suggestions</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="settings-section danger-zone">
+                    <h3>Danger Zone</h3>
+                    <button class="delete-account-btn">Delete Account</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="4"></div>
+    <script>
+        load("footer.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

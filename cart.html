@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping Cart | JM Shopping</title>
+    <link rel="stylesheet" href="css/cart.css">
+    <!-- favicon -->
+    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    <!-- header links -->
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+
+    <!-- CART CONTAINER -->
+    <div id="cartMainContainer">
+        <div class="cart-header">
+            <h1>Shopping Cart</h1>
+            <h3 id="totalItem">Total Items: 0</h3>
+            <div class="cart-actions">
+                <button id="continueShoppingBtn"><i class="fas fa-arrow-left"></i> Continue Shopping</button>
+            </div>
+        </div>
+
+        <div class="cart-content">
+            <div id="cartContainer">
+                <!-- JS rendered cart items will go here -->
+                <div id="loading" style="text-align: center; padding: 30px;">
+                    <i class="fas fa-spinner fa-spin fa-2x"></i>
+                    <p>Loading your cart...</p>
+                </div>
+            </div>
+
+            <div id="orderSummary">
+                <div class="summary-header">
+                    <h2>Order Summary</h2>
+                </div>
+                <div class="summary-content">
+                    <div class="summary-item">
+                        <span>Items:</span>
+                        <span id="items-price">Rs 0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping & Handling:</span>
+                        <span id="shipping-price">Rs 50</span>
+                    </div>
+                    <div class="summary-item discount-row" id="discount-row" style="display: none;">
+                        <span>Discount:</span>
+                        <span id="discount-amount">- Rs 0</span>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-item total-row">
+                        <span>Order Total:</span>
+                        <span id="total-price">Rs 0</span>
+                    </div>
+                </div>
+                <div class="coupon-section">
+                    <div class="coupon-input">
+                        <input type="text" id="couponCode" placeholder="Enter coupon code">
+                        <button id="applyCoupon">Apply</button>
+                    </div>
+                </div>
+                <div class="checkout-button">
+                    <button id="checkoutBtn">Proceed to Checkout <i class="fas fa-lock"></i></button>
+                </div>
+                <div class="secure-checkout">
+                    <i class="fas fa-shield-alt"></i> Secure Checkout
+                </div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+
+        <div id="emptyCart" style="display: none;">
+            <div class="empty-cart-container">
+                <div class="empty-cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h2>Your cart is empty</h2>
+                <p>Looks like you haven't added anything to your cart yet.</p>
+                <button id="shopNowBtn">Shop Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="4"></div>
+    <script>
+        load("footer.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>
+    <script src="cart.js"></script>
+</body>
+</html>x
