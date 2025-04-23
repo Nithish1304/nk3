@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+#mainContainer {
+    padding-top: 100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#clothingBanner {
+    width: 90%;
+    margin: 0 auto 40px;
+    text-align: center;
+    padding: 30px 0;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+}
+
+#clothingBanner h1 {
+    font-size: 36px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+#clothingBanner p {
+    font-size: 16px;
+    color: #666;
+}
+
+#filtersSection {
+    width: 20%;
+    float: left;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+#filtersSection h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.filterCategory {
+    margin-bottom: 20px;
+}
+
+.filterCategory h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: rgb(3, 94, 94);
+}
+
+.filterCheckboxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.filterCheckboxes label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#applyFilters, #clearFilters {
+    padding: 8px 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#applyFilters {
+    background-color: rgb(3, 122, 122);
+    color: white;
+}
+
+#applyFilters:hover {
+    background-color: rgb(3, 94, 94);
+}
+
+#clearFilters {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+#clearFilters:hover {
+    background-color: #e0e0e0;
+}
+
+#productsContainer {
+    width: 75%;
+    float: right;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+#sortOptions {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+#sortSelect {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+}
+
+#clothingItems {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.clothingBox {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 2px 6px 2px rgb(219, 219, 219);
+    transition: all 0.3s ease;
+}
+
+.clothingBox:hover {
+    transform: translateY(-5px);
+    box-shadow: 1px 6px 10px 0 rgb(185, 185, 185);
+}
+
+.clothingBox img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.clothingDetails {
+    padding: 15px;
+    text-transform: capitalize;
+}
+
+.clothingBox a {
+    text-decoration: none;
+    color: rgb(29, 29, 29);
+}
+
+.clothingBox h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.clothingBox h4 {
+    font-weight: 100;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.clothingBox h2 {
+    color: rgb(3, 94, 94);
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* No Results Message */
+.noResults {
+    grid-column: span 4;
+    text-align: center;
+    padding: 50px 0;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Clear fix */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Media Queries */
+@media(max-width: 1200px) {
+    #clothingItems {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 992px) {
+    #filtersSection {
+        width: 25%;
+    }
+    
+    #productsContainer {
+        width: 70%;
+    }
+    
+    #clothingItems {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 768px) {
+    #filtersSection {
+        width: 100%;
+        float: none;
+        margin-bottom: 30px;
+    }
+    
+    #productsContainer {
+        width: 100%;
+        float: none;
+    }
+    
+    #clothingItems {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #sortOptions {
+        text-align: left;
+    }
+}
+
+@media(max-width: 576px) {
+    #clothingItems {
+        grid-template-columns: 1fr;
+    }
+    
+    #clothingBanner h1 {
+        font-size: 28px;
+    }
+}
